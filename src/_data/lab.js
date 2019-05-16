@@ -7,6 +7,7 @@ module.exports = async function() {
   return {
     experiences: {
       fr: await getExperience('fr'),
+      de: await getExperience('de'),
       it: await getExperience('it'),
       rm: await getExperience('rm')
     }
