@@ -1,27 +1,28 @@
 <!DOCTYPE html>
-<html lang="it">
-    <head>
-        <meta charset="utf-8"/>
-        <title>LAB</title>
-        <link href="./base.css" rel="stylesheet">
-    </head>
-    <body>
-        <section>
-            {% for experience in lab.experiences.it %}
-                <article>
-                    <h1>{{ experience.title }}</h1>
-                    {{ experience.description | markdown2HTML }}
+    <html lang="it">
+        <head>
+            <meta charset="utf-8"/>
+            <title>LAB</title>
+            <link href="./assets/base.css" rel="stylesheet">
+        </head>
+        <body>
+            <section>
+                {% for experience in lab.experiences.it %}
+                    <article>
+                        <h1>{{ experience.title }}</h1>
+                        {{ experience.description | markdown2HTML }}
 
-                    {% capture imageAbsPath %}
-                        {{ api.url }}/cockpit/image?token={{ api.token }}&w=200&q=70&o=true&m=bestFit&src={{ experience.icon._id }}
-                    {% endcapture %}
+                        {% capture imageAbsPath %}
+                            {{ api.url }}/cockpit/image?token={{ api.token }}&w=200&q=70&o=true&m=bestFit&src={{ experience.icon._id }}
+                        {% endcapture %}
 
-                    <img src="{{ imageAbsPath }}" alt="{{ experience.title | append: ' icona' }}"/>
-                    {{ experience.credits | markdown2HTML }}
+                        <img src="{{ imageAbsPath }}" alt="{{ experience.title | append: ' icona' }}"/>
+                        {{ experience.credits | markdown2HTML }}
 
-                    <a href="{{ experience.url }}" target="_blank" rel="noopener noreferrer">Play the experience</a>
-                </article>
-            {% endfor %}
-        </section>
-    </body>
-</html>
+                        <a href="{{ experience.url }}" target="_blank" rel="noopener noreferrer">Play the experience</a>
+                    </article>
+                {% endfor %}
+            </section>
+            {% include ga.html %}
+        </body>
+    </html>

@@ -5,7 +5,7 @@ Homepage listing all the currently available experiences
 ## Project setup
 
 ```bash
-npm install
+npm ci
 ```
 
 Create a `.env` file at the root directory with:
@@ -23,3 +23,8 @@ npm start
 
 The files are rendered inside `dist` folder.
 French is used as default language under the root folder, others languages are available under subfolders.
+
+### SCSS Compilation
+
+`Base.scss` is compiled and rendered in `dist/assets/base.css`.
+Path configuration is in packages.json

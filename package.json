@@ -4,12 +4,16 @@
   "author": "imagoiq",
   "description": "Home page referencing lab experiences",
   "scripts": {
-    "start": "eleventy --input=src --output=dist --formats=liquid"
+    "start": "npm run eleventy-build && npm run build-css",
+    "eleventy-build": "eleventy --input=src --output=dist --formats=liquid",
+    "build-css": "node-sass --include-path scss src/assets/base.scss   dist/assets/base.css"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.8.3",
     "dotenv": "^8.0.0",
     "html-minifier": "^4.0.0",
-    "node-fetch": "^2.5.0"
+    "node-fetch": "^2.5.0",
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.19.1"
   }
 }
