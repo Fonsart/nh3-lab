@@ -4,7 +4,7 @@
   "author": "imagoiq",
   "description": "Home page referencing lab experiences",
   "scripts": {
-    "start": "npm run eleventy-build && npm run build-css",
+    "start": "npm run build-css && npm run eleventy-build",
     "eleventy-build": "eleventy --input=src --output=dist --formats=liquid,md",
     "build-css": "node-sass --output-style compressed --include-path scss src/assets/style/main.scss   dist/assets/style/main.css"
   },
