@@ -1,0 +1,80 @@
+<footer class="footer">
+        <div class="footer__wrapper">
+            <div class="footer__title">
+                <h1>
+                    {{ info.footer_title }}
+                </h1>
+            </div>
+            <div class="footer__links">
+                <div class="footer__list">
+                    <h6 class="footer__header">{{ info.footer_legal }}</h6>
+                    <ul>
+                        <li><a class="footer__link"href="{{ info.footer_conditions.link }}">{{ info.footer_conditions.title }}</a></li>
+                        <li><a class="footer__link"href="{{ info.footer_confidentiality.link }}">{{ info.footer_confidentiality.title }}</a></li>
+                    </ul>
+                </div>
+                <div class="footer__list">
+                    <h6 class="footer__header">{{ info.footer_informations}}</h6>
+                    <ul>
+                        <li><a class="footer__link"href="{{ info.footer_about.link }}">{{ info.footer_about.title }}</a></li>
+                        <li><a class="footer__link"href="{{ info.footer_partners.link }}">{{ info.footer_partners.title }}</a></li>
+                        <li><a class="footer__link"href="{{ info.footer_contact.link }}">{{ info.footer_contact.title }}</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="footer__sponsor">
+                <div class="footer__list">
+                    <h6 class="footer__header">Sponsor</h6>
+
+                    {% for sponsor in info.footer_sponsors2 %}
+                        <a href="{{ sponsor.value.link }}" target="_blank" rel="noopener noreferrer">
+                            <img alt="Logo {{ sponsor.value.name }}" class="footer__link" class="logo-sponsor" height="24px" src="{{ api.assets_url }}/{{ sponsor.value.logo.path }}" width="auto">
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="footer__products">
+                <div class="footer__products__item" id="footer__notreHistoire">
+                    {% for nh in info.footer_nhlocalized %}
+                        <a href="{{ nh.value.link }}" target="_blank" rel="noopener noreferrer">
+                            <img alt="Logo {{ nh.value.name }}" src="{{ api.assets_url }}/{{ nh.value.logo.path }}">
+                        </a>
+                        {% if forloop.first == true %}
+                            <p>{{ nh.value.slogan }}</p>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="footer__products__item" id="footer__l-inedit">
+                    <a href="{{ info.footer_nh3mag.link }}" target="_blank" rel="noopener noreferrer">
+                        <img alt="Logo {{ info.footer_nh3mag.title }}" src="{{ api.assets_url }}/{{ info.footer_nh3mag.logo.path }}">
+                        <p>{{ info.footer_nh3mag.description }}</p>
+                    </a>
+                </div>
+                <div class="footer__products__item" id="footer__lab">
+                    <a href="{{ info.footer_nh3lab.link }}" target="_blank" rel="noopener noreferrer">
+                        <img alt="Logo {{ info.footer_nh3lab.title }}" src="{{ api.assets_url }}/{{ info.footer_nh3lab.logo.path }}">
+                        <p>{{ info.footer_nh3lab.description }}</p>
+                    </a>
+                </div>
+                <div class="footer__products__item" id="footer__white-label">
+                    <a href="{{ info.footer_whitelabel.link }}" target="_blank" rel="noopener noreferrer">
+                        <img alt="Logo {{ info.footer_whitelabel.title }}" src="{{ api.assets_url }}/{{ info.footer_whitelabel.logo.path }}">
+                        <p>{{ info.footer_whitelabel.description }}</p>
+                    </a>
+                </div>
+            </div>
+
+            <div id="footer__social-links">
+                {% for social in info.footer_socialnetwork %}
+                    <a class="leading-none text-brand-{{ social.value.name }} mr-3" href="{{ social.value.link }}" rel="noopener noreferrer" target="_blank">
+                        <img class="icon" alt="Logo {{ nh.value.name }}" src="{{ api.assets_url }}/{{ social.value.logo.path }}">
+                    </a>
+                {% endfor %}
+            </div>
+
+            <div class="website-credit">
+                {{ info.footer_credits | markdown2HTML }}
+            </div>
+        </div>
+    </footer>

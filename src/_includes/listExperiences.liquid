@@ -1,0 +1,45 @@
+<section id="experiences">
+    {% for experience in lab.experiences[lang] %}
+        <article class="experience-poster w-90 center mv5 mv6-l mw9-ns grow-large">
+
+            {% capture imageAbsPath %}
+                {{ api.url }}/cockpit/image?token={{ api.token }}&w=310&q=70&o=true&m=bestFit&src={{ experience.icon._id }}
+            {% endcapture %}
+
+            {% capture imageAbsPath1_5x %}
+                {{ api.url }}/cockpit/image?token={{ api.token }}&w=465&q=70&o=true&m=bestFit&src={{ experience.icon._id }}
+            {% endcapture %}
+
+            {% capture imageAbsPath2x %}
+                {{ api.url }}/cockpit/image?token={{ api.token }}&w=620&q=70&o=true&m=bestFit&src={{ experience.icon._id }}
+            {% endcapture %}
+
+            {% capture imageAbsPath2_5x %}
+                {{ api.url }}/cockpit/image?token={{ api.token }}&w=775&q=70&o=true&m=bestFit&src={{ experience.icon._id }}
+            {% endcapture %}
+
+            {% capture imageAbsPath3x %}
+                {{ api.url }}/cockpit/image?token={{ api.token }}&w=930&q=70&o=true&m=bestFit&src={{ experience.icon._id }}
+            {% endcapture %}
+
+            {% capture experienceIndex %}
+                {% if forloop.index <= 9 %}
+                    0{{ forloop.index }}
+                {% else %}
+                    {{ forloop.index }}
+                {% endif %}
+            {% endcapture %}
+
+            <a class="link" href="./experiences/{{ experience.title | slug }}">
+                <div class="b--solid bw2 b--dark-green br-pill pa3 ph4-ns flex-ns flex-row-reverse-ns">
+                    <img class="w-100 w5-ns h5-ns" srcset="{{ imageAbsPath }}, {{ imageAbsPath1_5x }} 1.5x, {{ imageAbsPath2x }} 2x, {{ imageAbsPath2_5x }} 2.5x, {{ imageAbsPath3x }} 3x" src="{{ imageAbsPath }}" alt="{{ experience.title | append: ' icon' }}"/>
+                    <header class="pt3 pt0-ns ml3 mr1 ml0-ns flex-auto-ns h5-ns flex-ns flex-column-ns justify-between-ns">
+                        <span class="experience-counter white f3 normal lh-title">{{ experienceIndex }}
+                        </span>
+                        <h2 class="ma0 white f3 normal lh-title">{{ experience.title }}</h2>
+                    </header>
+                </div>
+            </a>
+        </article>
+    {% endfor %}
+</section>

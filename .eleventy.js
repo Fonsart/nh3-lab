@@ -1,4 +1,5 @@
 const htmlmin = require('html-minifier');
+const cacheBuster = require('@mightyplow/eleventy-plugin-cache-buster');
 
 module.exports = function(eleventyConfig) {
   // Liquid Filter
@@ -27,4 +28,19 @@ module.exports = function(eleventyConfig) {
 
     return content;
   });
+
+  // Copy assets
+  eleventyConfig.addPassthroughCopy('src/assets/js');
+  eleventyConfig.addPassthroughCopy('src/assets/favicons');
+
+  // Cache busting
+  const cacheBusterOptions = {};
+  eleventyConfig.addPlugin(cacheBuster(cacheBusterOptions));
+
+  return {
+    dir: {
+      includes: '_includes',
+      layouts: '_layouts'
+    }
+  };
 };

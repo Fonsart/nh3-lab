@@ -1,0 +1,36 @@
+{% assign info = lab.info[lang] %}
+
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <title>{{ info.page_title }}</title>
+        <meta content="{{ info.main_description }}" name="description"/>
+        <link href="https://fonts.googleapis.com/css?family=Barlow:400,500,500i&display=swap" rel="stylesheet">
+        <link href="/assets/style/main.css" rel="stylesheet"/>
+        <link href="/assets/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+        <link href="/assets/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+        <link href="/assets/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+        <link href="/assets/favicons/site.webmanifest" rel="manifest">
+        <link color="#000000" href="/assets/favicons/safari-pinned-tab.svg" rel="mask-icon">
+        <link href="/assets/favicons/favicon.ico" rel="shortcut icon">
+        <meta content="#000000" name="msapplication-TileColor">
+        <meta content="/assets/favicons/browserconfig.xml" name="msapplication-config">
+        <meta content="#ffffff" name="theme-color">
+    </head>
+    <body class="home-page bg-black-90 white">
+        <header class="w-100">
+            <img alt="Logo notrehistoire" class="lab__nh-logo db center mt3 mt4-ns mt5-l" src="{{ api.assets_url }}/{{ info.header_nhlogo.path }}"/>
+            <a class="logo-home-link db w5 pr5 pr4-ns pr3-l center mt2 mb5" href="{{ page.url }}">
+                <img alt="Logo Lab" class="nl3" src="{{ api.assets_url }}/{{ info.header_lablogo.path }}"/>
+            </a>
+        </header>
+        <h1 class="measure tracked ph4 f5 lh-copy normal center tc ttu">{{ info.header_description }}</h1>
+        {% include listExperiences %}
+
+        {% include footer %}
+        {% include googleAnalytics.html %}
+    </body>
+</html>

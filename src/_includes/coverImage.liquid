@@ -1,0 +1,53 @@
+{% capture imageAbsPath400 %}
+{{ api.url }}/cockpit/image?token={{ api.token }}&w=400&q=70&o=true&m=bestFit&src={{ experience.cover._id }}
+{% endcapture %}
+
+{% capture imageAbsPath600 %}
+{{ api.url }}/cockpit/image?token={{ api.token }}&w=600&q=70&o=true&m=bestFit&src={{ experience.cover._id }}
+{% endcapture %}
+
+{% capture imageAbsPath800 %}
+{{ api.url }}/cockpit/image?token={{ api.token }}&w=800&q=70&o=true&m=bestFit&src={{ experience.cover._id }}
+{% endcapture %}
+
+{% capture imageAbsPath1000 %}
+{{ api.url }}/cockpit/image?token={{ api.token }}&w=1000&q=70&o=true&m=bestFit&src={{ experience.cover._id }}
+{% endcapture %}
+
+{% capture imageAbsPath1200 %}
+{{ api.url }}/cockpit/image?token={{ api.token }}&w=1200&q=70&o=true&m=bestFit&src={{ experience.cover._id }}
+{% endcapture %}
+
+{% capture imageAbsPath1400 %}
+{{ api.url }}/cockpit/image?token={{ api.token }}&w=1400&q=70&o=true&m=bestFit&src={{ experience.cover._id }}
+{% endcapture %}
+
+{% capture imageAbsPath1600 %}
+{{ api.url }}/cockpit/image?token={{ api.token }}&w=1600&q=70&o=true&m=bestFit&src={{ experience.cover._id }}
+{% endcapture %}
+
+{% capture imageAbsPath1800 %}
+{{ api.url }}/cockpit/image?token={{ api.token }}&w=1800&q=70&o=true&m=bestFit&src={{ experience.cover._id }}
+{% endcapture %}
+
+{% capture imageAbsPath2000 %}
+{{ api.url }}/cockpit/image?token={{ api.token }}&w=2000&q=70&o=true&m=bestFit&src={{ experience.cover._id }}
+{% endcapture %}
+
+{% capture imageAbsPath2200 %}
+{{ api.url }}/cockpit/image?token={{ api.token }}&w=2200&q=70&o=true&m=bestFit&src={{ experience.cover._id }}
+{% endcapture %}
+
+{% capture imageAbsPath2400 %}
+{{ api.url }}/cockpit/image?token={{ api.token }}&w=2400&q=70&o=true&m=bestFit&src={{ experience.cover._id }}
+{% endcapture %}
+
+{% capture imageAbsPath2600 %}
+{{ api.url }}/cockpit/image?token={{ api.token }}&w=2600&q=70&o=true&m=bestFit&src={{ experience.cover._id }}
+{% endcapture %}
+
+<img alt="Cover {{ experience.title }}"
+class="experience-page__cover mt5 z-2 vh-50 center ma0-l vh-100-l w-100-l"
+srcset="{{ imageAbsPath400 }} 400w,{{ imageAbsPath600 }} 600ww,{{ imageAbsPath800 }} 800w,{{ imageAbsPath1000 }} 1000w,{{ imageAbsPath1200 }} 1200w,{{ imageAbsPath1400 }} 1400w,{{ imageAbsPath1600 }} 1600w,{{ imageAbsPath1800 }} 1800w,{{ imageAbsPath2000 }} 2000w,{{ imageAbsPath2200 }} 2200w,{{ imageAbsPath2400 }} 2400w,{{ imageAbsPath2600 }} 2600w"
+sizes="(max-width: 500px) 100vw, (max-width: 960px) 400px, 60vw"
+src="{{ imageAbsPath400 }}"/>

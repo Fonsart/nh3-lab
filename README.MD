@@ -12,6 +12,7 @@ Create a `.env` file at the root directory with:
 
 ```bash
 API_URL='https://Your_CockpitCMS_URL/api'
+API_ASSETS_URL='https://Your_CockpitCMS_URL/storage/uploads'
 API_TOKEN='Your_token'
 ```
 
@@ -26,5 +27,5 @@ French is used as default language under the root folder, others languages are a
 
 ### SCSS Compilation
 
-`Base.scss` is compiled and rendered in `dist/assets/base.css`.
+`main.scss` is compiled and rendered in `dist/assets/style/main.css`.
 Path configuration is in packages.json
