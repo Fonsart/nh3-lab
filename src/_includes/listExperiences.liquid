@@ -30,7 +30,7 @@
                 {% endif %}
             {% endcapture %}
 
-            <a class="link" href="./experiences/{{ experience.title | slug }}">
+            <a class="link" href="experiences/{{ experience.title | slug }}">
                 <div class="b--solid bw2 b--dark-green br-pill pa3 ph4-ns flex-ns flex-row-reverse-ns">
                     <img class="w-100 w5-ns h5-ns" srcset="{{ imageAbsPath }}, {{ imageAbsPath1_5x }} 1.5x, {{ imageAbsPath2x }} 2x, {{ imageAbsPath2_5x }} 2.5x, {{ imageAbsPath3x }} 3x" src="{{ imageAbsPath }}" alt="{{ experience.title | append: ' icon' }}"/>
                     <header class="pt3 pt0-ns ml3 mr1 ml0-ns flex-auto-ns h5-ns flex-ns flex-column-ns justify-between-ns">
